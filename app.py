@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+image = "images/movie-poster.jpg"
 st.set_page_config(
     page_title="K-Drama Recommendation App",
     page_icon=":tv:",
@@ -47,7 +48,7 @@ def recommend_kdramas(title, top_n=25):
         poster_url = data.iloc[i[0]]['Poster_Image']
         
         if pd.isna(poster_url) or poster_url == "No image" or not poster_url.startswith("http"):
-            poster_url = './Screenshot 2025-01-17 201333.png' 
+            poster_url = "https://github.com/Sakhamuri-Swetha/Recommendation-System/blob/main/images/IMG1.png?raw=true"
 
         official_site = data.iloc[i[0]]['Link'] if 'Link' in data.columns else '#'
         actors = data.iloc[i[0]]['Actors'] if 'Actors' in data.columns else 'Unknown'
