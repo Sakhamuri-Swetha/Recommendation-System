@@ -1,2 +1,5 @@
+scikit-learn
+pandas
+streamlit
 selenium
-pandas 
+numpy
